@@ -1,4 +1,6 @@
 const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/index.ts',
@@ -6,9 +8,6 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
-  },
-  devServer: {
-    publicPath: '/dist/'
   },
   devtool: 'inline-source-map',
   module: {
@@ -22,5 +21,11 @@ module.exports = {
   },
   resolve: {
     extensions: ['.ts', '.js']
-  }
+  },
+  plugins: [
+    new webpack.EnvironmentPlugin(['GOOGLE_API_KEY']),
+    new HtmlWebpackPlugin({
+      template: 'src/index.ejs',
+    })
+  ]
 }
