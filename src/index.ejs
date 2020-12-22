@@ -5,9 +5,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>gmaps-ts-demo</title>
+  <title>googlemaps-ts-demo</title>
   <link rel="stylesheet" href="index.css" />
-  <script src="/dist/bundle.js" defer></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=<%= process.env.GOOGLE_API_KEY %>&libraries=&v=weekly"
+    defer></script>
+  <script src="bundle.js" defer></script>
+
 </head>
 
 <body>
