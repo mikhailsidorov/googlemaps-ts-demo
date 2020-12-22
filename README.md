@@ -1,1 +1,1 @@
-# gmaps-ts-demo
+# googlemaps-ts-demo
